@@ -1,0 +1,64 @@
+<form autocomplete="off" #createToDoModal="ngForm" (ngSubmit)="save()">
+    <h1 mat-dialog-title>{{ "Create ToDO" | localize }}</h1>
+    <mat-dialog-content style="width:800px;height:300px;">
+          <br />
+          <div class="row-fluid">
+            <div class="col-md-6">
+              <mat-form-field>
+                <input
+                  matInput
+                  name="TaskName"
+                  [placeholder]="'taskName' | localize"
+                  [(ngModel)]="todo.taskName"
+                  required
+                  minlength="2"
+                  maxlength="32"
+                />
+              </mat-form-field>
+              <div class="checkbox-wrapper">
+                <mat-checkbox name="isCompleted" [(ngModel)]="todo.isCompleted">
+                  {{ "Is Completed" | localize }}
+                </mat-checkbox>
+              </div>
+            </div>
+            <div class="col-md-6">
+                
+              <mat-form-field>
+                <input
+                  matInput
+                  name="Desciption"
+                  [placeholder]="'Desciption' | localize"
+                  [(ngModel)]="todo.desciption"
+                  required
+                  maxlength="32"
+                />
+              </mat-form-field>
+              <mat-form-field>
+                  <input
+                    matInput
+                    name="Category"
+                    [placeholder]="'Category' | localize"
+                    [(ngModel)]="todo.category"
+                    required
+                    maxlength="32"
+                  />
+                </mat-form-field>
+            </div>
+          </div>
+    </mat-dialog-content>
+    <div mat-dialog-actions align="end">
+      <button mat-button type="button" [disabled]="saving" (click)="close(false)">
+        {{ "Cancel" | localize }}
+      </button>
+      <button
+        mat-flat-button
+        type="submit"
+        flex="15"
+        color="primary"
+        [disabled]="!createToDoModal.form.valid || saving"
+      >
+        {{ "Save" | localize }}
+      </button>
+    </div>
+  </form>
+  
