@@ -1,7 +1,9 @@
 
 
 DB server: MSSQL
+
 database server name : (localdb)\\MSSQLLocalDB
+
 database name: MyApplicationDb
 
 Steps to Start The Host:
@@ -22,8 +24,12 @@ Steps to Start The Client:
 
 =>Requirements
   The Angular application needs the following tools installed:
+  
 	-nodejs 6.9+ with npm 3.10+
+	
 	-Typescript 2.0+
+	
+	
 
 1. Open a command prompt, navigate to the angular folder which contains the *.sln file and run the following command to restore the npm packages:==> npm install
 2. In your opened command prompt, run the following command:==> npm start
@@ -31,6 +37,8 @@ Steps to Start The Client:
 client will start on http://localhost:4200
 
 ----------------------Default Login credentials:------------------------------------------------------------
+
 username: admin
+
 password: 123qwe
 
